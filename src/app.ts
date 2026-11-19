@@ -4,8 +4,8 @@ const app = express();
 app.use(express.json());
 
 
-app.use("./", (req: Request, res: Response, next: NextFunction) => {
-    console.log("Acessou a rota: " + req.url);
+app.get("/", (req: Request, res: Response, next: NextFunction) => {
+    res.send("Acessou a rota: " + req.url);
     next();
 }
 )
